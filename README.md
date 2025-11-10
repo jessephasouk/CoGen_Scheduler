@@ -39,8 +39,6 @@ If you've never used Python before, follow these steps:
 3. If you see "Python 3.x.x" - you're ready!
 4. If not installed, download from [python.org/downloads](https://www.python.org/downloads/)
 
-💡 **Need help?** Ask your IT department or a tech-savvy colleague to install Python for you.
-
 ## Installation
 
 ### Option 1: Quick Setup (Single File)
