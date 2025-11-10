@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import datetime
-import sys # Import sys to allow clean exit
+import sys 
 import argparse
 import glob
 import os
