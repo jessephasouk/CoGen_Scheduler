@@ -18,29 +18,60 @@ A Python tool to efficiently search and display tour guide availability for Coge
 - Built-in modules: `datetime`, `sys`, `argparse`, `glob`, `os`, `re` (included with Python)
 - Any CSV file with tour guide availability data
 
+### First Time Setup - Check if Python is Installed
+
+If you've never used Python before, follow these steps:
+
+**Windows:**
+1. Open Command Prompt (search for "cmd" in Start Menu)
+2. Type: `python --version` and press Enter
+3. If you see something like "Python 3.x.x" - you're good to go!
+4. If you see an error or "command not found":
+   - Open Microsoft Store (search for it in Start Menu)
+   - Search for "Python 3.12" (or latest version)
+   - Click "Get" or "Install"
+   - Wait for installation to complete
+   - Restart Command Prompt and try step 2 again
+
+**Mac/Linux:**
+1. Open Terminal
+2. Type: `python3 --version` and press Enter
+3. If you see "Python 3.x.x" - you're ready!
+4. If not installed, download from [python.org/downloads](https://www.python.org/downloads/)
+
+💡 **Need help?** Ask your IT department or a tech-savvy colleague to install Python for you.
+
 ## Installation
 
 ### Option 1: Quick Setup (Single File)
 
 Perfect for quick use - just download and run:
 
-1. Download `availability.py` from this repository
+1. **Check Python is installed** (see "First Time Setup" above if needed)
+
+2. Download `availability.py` from this repository
    - Click on `availability.py` in the file list above
    - Click the "Download" or "Raw" button and save the file
 
-2. Install pandas (if you haven't already):
-```bash
-pip install pandas
-```
+3. Install pandas (one-time setup):
+   - Open Command Prompt (Windows) or Terminal (Mac/Linux)
+   - Type: `pip install pandas` and press Enter
+   - Wait for it to finish (you'll see "Successfully installed...")
 
-3. Place your CSV file in the same folder as `availability.py`
+4. Place your CSV file in the same folder as `availability.py`
+   - Create a folder like "Tour Scheduler" on your Desktop
+   - Put both `availability.py` and your CSV file in this folder
 
-4. Run the script:
-```bash
-python availability.py
-```
+5. Run the script:
+   - Open Command Prompt or Terminal
+   - Navigate to your folder: `cd Desktop/Tour Scheduler`
+   - Type: `python availability.py` and press Enter
 
 That's it! No need to clone the entire repository.
+
+**Troubleshooting:**
+- If `python` doesn't work, try `python3` instead
+- If `pip` doesn't work, try `pip3` or `python -m pip install pandas`
 
 ### Option 2: Full Repository Clone
 
