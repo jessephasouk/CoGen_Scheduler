@@ -5,13 +5,11 @@ A Python tool to efficiently search and display tour guide availability for Coge
 ## Features
 
 - **Auto CSV Detection**: Automatically finds and uses CSV files in the directory
-- **Continuous Date Search**: Enter multiple dates one after another without confirmations
 - **Date-based Search**: Search for available tour guides by specific dates (supports multiple date formats)
 - **Smart Year Filtering**: Automatically filters results based on the current year
 - **Command-line Flag**: Use `--past` flag to optionally include historical data
 - **Form Year Display**: Shows which year each guide submitted their availability
 - **Flexible Date Parsing**: Accepts dates in formats like "10/28", "October 29", "Jan 27"
-- **Easy Exit**: Type 'quit', 'exit', or 'q' to stop
 
 ## Requirements
 
@@ -61,7 +59,7 @@ python availability.py --past
 ### Example Session
 
 ```
-Using CSV file: Cogen Plant Tour Guide Availability Form(Sheet1).csv
+Using CSV file: example.csv
 Mode: Current year only (2025)
 Tip: Use --past flag to include past years
 
