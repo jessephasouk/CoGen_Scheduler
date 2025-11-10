@@ -62,7 +62,16 @@ Perfect for quick use - just download and run:
 
 5. Run the script:
    - Open Command Prompt or Terminal
-   - Navigate to your folder: `cd Desktop/Tour Scheduler`
+   - Type: `cd` followed by a space
+   - Open the folder where you saved `availability.py` and your CSV
+   - Drag the folder into the Command Prompt window (this pastes the full path)
+   - Press Enter
+   - Now type: `python availability.py` and press Enter
+   
+   **Alternative (easier):**
+   - Open the folder containing `availability.py` and your CSV file
+   - Type `cmd` in the address bar at the top of the folder window and press Enter
+   - Command Prompt will open in that folder automatically
    - Type: `python availability.py` and press Enter
 
 That's it! No need to clone the entire repository.
