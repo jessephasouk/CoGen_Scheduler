@@ -91,6 +91,8 @@ All other dependencies are built-in Python modules and require no installation.
 ## Usage
 
 1. Download the CSV file from the Excel sheet or Google Form
+   - If using Microsoft Forms: Open your Forms response Excel file → File → Save As → CSV format
+   - The Excel file is automatically generated from Microsoft Forms responses
 
 2. Place the CSV file in the same directory as `availability.py`
    - The script will automatically detect any `.csv` file in the directory
@@ -174,6 +176,8 @@ The tool expects a CSV file with the following columns:
 - Availability (6th column) - Contains semicolon-separated time slots
 - Comments (7th column) - Optional additional information
 - Completion time - Used to extract the year of form submission
+
+**Note:** This tool is designed to work with CSV files exported from Microsoft Forms → Excel. The Excel workbook is auto-generated from a Microsoft Forms availability survey. If you're creating your own CSV file, make sure the column structure matches this format for the script to work correctly.
 
 ## File Structure
 
