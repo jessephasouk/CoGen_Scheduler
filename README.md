@@ -20,6 +20,32 @@ A Python tool to efficiently search and display tour guide availability for Coge
 
 ## Installation
 
+### Option 1: Quick Setup (Single File)
+
+Perfect for quick use - just download and run:
+
+1. Download `availability.py` from this repository
+   - Click on `availability.py` in the file list above
+   - Click the "Download" or "Raw" button and save the file
+
+2. Install pandas (if you haven't already):
+```bash
+pip install pandas
+```
+
+3. Place your CSV file in the same folder as `availability.py`
+
+4. Run the script:
+```bash
+python availability.py
+```
+
+That's it! No need to clone the entire repository.
+
+### Option 2: Full Repository Clone
+
+For development or if you want all files including tests and documentation:
+
 1. Clone this repository:
 ```bash
 git clone https://github.com/jessephasouk/CoGen_Scheduler.git
