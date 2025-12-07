@@ -178,15 +178,14 @@ Goodbye!
 
 ## CSV Format Expected
 
-The tool expects a CSV file with the following columns:
-- Name
-- Email
-- Additional columns (3-5)
-- Availability (6th column) - Contains semicolon-separated time slots
-- Comments (7th column) - Optional additional information
-- Completion time - Used to extract the year of form submission
+The tool expects a CSV file with columns and data similar to this (auto-generated from Microsoft Forms → Excel):
 
-**Note:** This tool is designed to work with CSV files exported from Microsoft Forms → Excel. The Excel workbook is auto-generated from a Microsoft Forms availability survey. If you're creating your own CSV file, make sure the column structure matches this format for the script to work correctly.
+```
+Id,Start time,Completion time,Email,Name,"I can go on a tour with these dates and times:","Anything else we should know before you get scheduled? (can't stay for whole time, looking to shadow, want to give walking tour, etc.)"
+1,10/9/2024 11:02,10/9/2024 11:03,john.doe@example.com,John Doe,"Monday, 10/28:  10:10am-11am;Tuesday, 10/29: 12:30pm-1:20pm;",
+```
+
+**Note:** This tool is designed to work with CSV files exported from Microsoft Forms → Excel. The Excel workbook is auto-generated from a Microsoft Forms availability survey. If you're creating your own CSV file, make sure the column structure and order matches this format for the script to work correctly.
 
 ## File Structure
 
