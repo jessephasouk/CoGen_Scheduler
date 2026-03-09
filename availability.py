@@ -2,7 +2,6 @@ import pandas as pd
 from datetime import datetime
 import sys 
 import argparse
-import glob
 import os
 
 def normalize_time_slot(slot):
@@ -227,38 +226,23 @@ if __name__ == "__main__":
     parser.add_argument('--past', action='store_true', help='Include results from past years')
     args = parser.parse_args()
     
-    # Find CSV files in the current directory
-    csv_files = glob.glob("*.csv")
-    
-    if not csv_files:
-        print("\nERROR: No CSV files found in the current directory!")
-        print("Please ensure there is at least one CSV file in the same directory as this script.")
+    # Open file explorer to select the CSV file
+    import tkinter as tk
+    from tkinter import filedialog
+    root = tk.Tk()
+    root.withdraw()  # Hide the blank tkinter window
+    print("Opening file browser — please select your CSV file...")
+    csv_file = filedialog.askopenfilename(
+        title="Select Availability CSV File",
+        filetypes=[("CSV files", "*.csv"), ("All files", "*.*")]
+    )
+    root.destroy()
+
+    if not csv_file:
+        print("\nNo file selected. Exiting.")
         sys.exit(1)
-    elif len(csv_files) == 1:
-        csv_file = csv_files[0]
-        print(f"Using CSV file: {csv_file}")
-    else:
-        print(f"\nFound {len(csv_files)} CSV files:")
-        for i, file in enumerate(csv_files, 1):
-            print(f"  {i}. {file}")
-        print("\nSelect a file number (or press Enter for first file):")
-        choice = input("> ").strip()
-        
-        if choice == "":
-            csv_file = csv_files[0]
-        else:
-            try:
-                idx = int(choice) - 1
-                if 0 <= idx < len(csv_files):
-                    csv_file = csv_files[idx]
-                else:
-                    print(f"Invalid choice. Using first file: {csv_files[0]}")
-                    csv_file = csv_files[0]
-            except ValueError:
-                print(f"Invalid input. Using first file: {csv_files[0]}")
-                csv_file = csv_files[0]
-        
-        print(f"Using: {csv_file}")
+
+    print(f"Using CSV file: {csv_file}")
     
     include_past = args.past
     
