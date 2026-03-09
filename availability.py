@@ -84,8 +84,8 @@ def dates_match(slot_str, search_month, search_day):
     import re
     for month_name, month_num in months.items():
         if month_num == search_month and month_name in slot_lower:
-            # Look for the day number near the month name
-            day_pattern = rf'\b{search_day}(?:st|nd|rd|th)?\b'
+            # Look for the day number near the month name (not followed by : to avoid matching times)
+            day_pattern = rf'\b{search_day}(?:st|nd|rd|th)?\b(?!:)'
             if re.search(day_pattern, slot_lower):
                 return True
     
@@ -102,7 +102,7 @@ def find_available_guides(csv_file, search_date, include_past=False):
     """
     try:
         # Read the CSV file
-        df = pd.read_csv(csv_file)
+        df = pd.read_csv(csv_file, encoding='cp1252')
     except FileNotFoundError:
         print(f"\nERROR: CSV file not found!")
         print(f"Please ensure '{csv_file}' is in the same directory as this script.")
