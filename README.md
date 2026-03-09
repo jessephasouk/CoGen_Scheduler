@@ -4,7 +4,7 @@ A Python tool to efficiently search and display tour guide availability for Coge
 
 ## Features
 
-- **Auto CSV Detection**: Automatically finds and uses CSV files in the directory
+- **File Browser GUI**: Opens a file picker dialog to select your CSV file — no need to place files in a specific directory
 - **Date-based Search**: Search for available tour guides by specific dates (supports multiple date formats)
 - **Smart Year Filtering**: Automatically filters results based on the current year
 - **Command-line Flag**: Use `--past` flag to optionally include historical data
@@ -15,7 +15,7 @@ A Python tool to efficiently search and display tour guide availability for Coge
 
 - Python 3.x
 - pandas (third-party library)
-- Built-in modules: `datetime`, `sys`, `argparse`, `glob`, `os`, `re` (included with Python)
+- Built-in modules: `datetime`, `sys`, `argparse`, `tkinter`, `re` (included with Python)
 - Any CSV file with tour guide availability data
 
 ### First Time Setup - Check if Python is Installed
@@ -56,20 +56,14 @@ Perfect for quick use - just download and run:
    - Type: `pip install pandas` and press Enter
    - Wait for it to finish (you'll see "Successfully installed...")
 
-4. Place your CSV file in the same folder as `availability.py`
-   - Create a folder like "Tour Scheduler" on your Desktop
-   - Put both `availability.py` and your CSV file in this folder
-
-5. Run the script:
+4. Run the script:
    - Open Command Prompt or Terminal
-   - Type: `cd` followed by a space
-   - Open the folder where you saved `availability.py` and your CSV
-   - Drag the folder into the Command Prompt window (this pastes the full path)
-   - Press Enter
-   - Now type: `python availability.py` and press Enter
+   - Navigate to the folder where you saved `availability.py`
+   - Type: `python availability.py` and press Enter
+   - A file browser window will open — navigate to your CSV file and select it
    
    **Alternative (easier):**
-   - Open the folder containing `availability.py` and your CSV file
+   - Open the folder containing `availability.py`
    - Type `cmd` in the address bar at the top of the folder window and press Enter
    - Command Prompt will open in that folder automatically
    - Type: `python availability.py` and press Enter
@@ -103,11 +97,7 @@ All other dependencies are built-in Python modules and require no installation.
    - If using Microsoft Forms: Open your Forms response Excel file → File → Save As → CSV format
    - The Excel file is automatically generated from Microsoft Forms responses
 
-2. Place the CSV file in the same directory as `availability.py`
-   - The script will automatically detect any `.csv` file in the directory
-   - If multiple CSV files exist, you'll be prompted to choose one
-
-3. Run the script:
+2. Run the script:
 ```bash
 # For current year results only
 python availability.py
@@ -116,7 +106,9 @@ python availability.py
 python availability.py --past
 ```
 
-3. Enter dates continuously:
+3. A file browser window will open — navigate to and select your CSV file.
+
+4. Enter dates continuously:
    - Type a date to search (e.g., "10/28", "October 29", "Jan 27")
    - View available guides organized by time slot
    - Enter another date immediately - no confirmations needed!
@@ -125,8 +117,9 @@ python availability.py --past
 ### Example Session
 
 ```
-Using CSV file: example.csv
-Mode: Current year only (2025)
+Opening file browser — please select your CSV file...
+Using CSV file: C:/Users/you/Documents/example.csv
+Mode: Current year only (2026)
 Tip: Use --past flag to include past years
 
 Enter dates to search (e.g., '10/28', 'October 29', 'Jan 27')
@@ -141,8 +134,8 @@ Tour Guide Availability for: 10/28
 
  October 28, 2:00 PM - 3:00 PM
    2 guide(s) available:
-   • John Doe (john@example.com) [2025]
-   • Jane Smith (jane@example.com) [2025] - Prefer afternoon slots
+   • John Doe (john@example.com) [2026]
+   • Jane Smith (jane@example.com) [2026] - Prefer afternoon slots
 
 ============================================================
 
@@ -150,12 +143,12 @@ Tour Guide Availability for: 10/28
 
 ============================================================
 Tour Guide Availability for: 10/29
-(Current year: 2025)
+(Current year: 2026)
 ============================================================
 
  October 29, 10:00 AM - 11:00 AM
    1 guide(s) available:
-   • Bob Johnson (bob@example.com) [2025]
+   • Bob Johnson (bob@example.com) [2026]
 
 ============================================================
 
@@ -198,8 +191,8 @@ CoGen_Scheduler/
 
 ## Notes
 
-- The script automatically finds CSV files using `*.csv` wildcard pattern
-- If multiple CSV files are present, you'll be prompted to choose which one to use
+- A file browser dialog opens at startup so you can select any CSV file from anywhere on your computer
+- The CSV file does not need to be in the same folder as the script
 - The CSV file name doesn't need to match a specific pattern
 
 ## Contributing
